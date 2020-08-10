@@ -22,13 +22,18 @@ class Balloon{
   }
   
   void fly(){
-    if(this.y > -this.high){
-      delay(40);
-      this.y -= 1;
-      this.x += random(-2, 2);
+    if(mousePressed){
+      this.y = this.y;
     }
     else{
-      this.y = this.bottomScreen+(this.wide/2);
+      if(this.y > -this.high){
+        delay(40);
+        this.y -= 1;
+        this.x += random(-2, 2);
+      }
+      else{
+        this.y = this.bottomScreen+(this.wide/2);
+      }
     }
     this.create_balloon();
   }
