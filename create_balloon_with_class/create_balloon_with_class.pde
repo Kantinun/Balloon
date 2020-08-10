@@ -6,21 +6,39 @@ class Balloon{
   float y;      //y-coordinate of balloon
   float wide;   //width of balloon
   float high;   //height of balloon
+  int bottomScreen;
   
-  Balloon(float x, float y, float wide, float high){
+  Balloon(float x, float y, float wide, float high, int bottomScreen){
     this.x = x;
     this.y = y;
     this.wide = wide;
     this.high = high;
+    this.bottomScreen = bottomScreen;
   }
   
   void create_balloon(){
     circle(this.x, this.y, this.wide);    //create part circle of balloon
     line(this.x, this.y+(this.wide/2), this.x, (this.y-(this.wide/2))+this.high);    //create part line of balloon
   }
+  
+  void fly(){
+    if(this.y > -this.high){
+      delay(40);
+      this.y -= 1;
+      this.x += random(-2, 2);
+    }
+    else{
+      this.y = this.bottomScreen+(this.wide/2);
+    }
+    this.create_balloon();
+  }
 }
+ 
+Balloon b1 = new Balloon(150, 100, 70, 200, 300);
 void setup(){
   size(300, 300);
-  Balloon b1 = new Balloon(150, 100, 70, 200);
-  b1.create_balloon();
+}
+void draw(){
+  background(255, 255, 255);
+  b1.fly();
 }
