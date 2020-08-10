@@ -56,6 +56,7 @@ Balloon b3 = new Balloon(50, 300, 40, 100, 300);
 
 void setup(){
   size(300, 300);
+  frameRate(20);
 }
 void draw(){
   background(255, 255, 255);
