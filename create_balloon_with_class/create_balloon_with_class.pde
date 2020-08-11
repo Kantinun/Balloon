@@ -1,5 +1,5 @@
 /*
-simple class Balloon have 1 method is create_balloon when use this method program will spawn a balloon 
+simple class Balloon have 2 method is create_balloon when use this method program will spawn a balloon and fly when use this method program will make animation balloon that fly to the top of window
 */
 class Balloon{
   float x;      //x-coordinate of balloon
@@ -18,9 +18,9 @@ class Balloon{
     this.wide = wide;
     this.high = high;
     this.bottomScreen = bottomScreen;
-    this.colorRed = random(0, 255);
-    this.colorGreen = random(0, 255);
-    this.colorBlue = random(0, 255);
+    this.colorRed = random(0, 255);//random red color
+    this.colorGreen = random(0, 255);//random green color
+    this.colorBlue = random(0, 255);//random blue color
     this.speed = random(1,10); //random speed balloon
     
     
